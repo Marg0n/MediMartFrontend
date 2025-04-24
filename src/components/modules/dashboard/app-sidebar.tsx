@@ -30,18 +30,18 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/customer/dashboard",
+      url: "/customer",
       icon: SquareTerminal,
       isActive: true,
     },
     {
-      title: "Shop",
-      url: "/customer/shop/products",
+      title: "Order Management",
+      url: "/customer/orderManagement",
       icon: Bot,
       items: [
         {
           title: "Manage Products",
-          url: "/customer/shop/products",
+          url: "/customer/shop/orderManagement",
         },
         {
           title: "Manage Categories",
@@ -60,7 +60,7 @@ const data = {
 
     {
       title: "Settings",
-      url: "#",
+      url: "/customer/setting",
       icon: Settings,
       items: [
         {

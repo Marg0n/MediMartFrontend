@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { AppSidebar } from "@/components/modules/dashboard/app-sidebar";
 import {
