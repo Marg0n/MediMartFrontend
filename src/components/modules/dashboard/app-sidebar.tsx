@@ -74,25 +74,25 @@ const data = {
       title: "Your Order",
       url: "/customer/orderManagement",
       icon: Bot,
-      // items: [
-      //   {
-      //     title: "Manage Products",
-      //     url: "/orderManagement",
-      //   },
+      items: [
+        {
+          title: "Your  Products",
+          url: "/customer/orderManagement",
+        },
     
-      // ],
+      ],
     },
     //ekhane change kora lagbe na eta common rekhechi
     {
       title: "Settings",
       url: "/customer/setting",
       icon: Settings,
-      // items: [
-      //   {
-      //     title: "Profile",
-      //     url: "/profile",
-      //   },
-      // ],
+      items: [
+        {
+          title: "Profile",
+          url: "/customer/setting",
+        },
+      ],
     },
   ],
   navSecondary: [
