@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { getAllOrders } from "@/services/orders";
 import { getAllUsers } from "@/services/users";

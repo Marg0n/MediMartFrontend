@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { updateProduct } from "../../../../../services/product";
+import { updateProduct } from "@/services/Product";
 import { TMedicine } from "@/types";
 import { useState } from "react";
 import { toast } from "sonner";

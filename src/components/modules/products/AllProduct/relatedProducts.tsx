@@ -1,4 +1,4 @@
-import { getAllProducts } from "@/services/product";
+import { getAllProducts } from "@/services/Product";
 import { TMedicine } from "@/types";
 import ProductCard from "./productCard";
 

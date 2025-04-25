@@ -1,3 +1,4 @@
+ 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -66,7 +67,7 @@ const PaymentDetails = () => {
   //* order handle
   const handleOrder = async () => {
     //* toast id
-    const orderLoading = toast.loading("Order is being placed");
+    const orderLoading = toast.loading("Order is in process");
 
     try {
       if (!user.user) {

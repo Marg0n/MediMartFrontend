@@ -1,5 +1,5 @@
 import UpdateMedicineForm from "@/components/modules/dashboard/admin/updateProduct";
-import { getSingleProduct } from "@/services/product";
+import { getSingleProduct } from "@/services/Product";
 
 const UpdateMedicinePage = async ({
   params,

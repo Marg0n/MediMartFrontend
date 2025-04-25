@@ -8,7 +8,7 @@ const AboutSection = () => {
         <header className="flex h-full lg:flex-row flex-col gap-[50px] lg:gap-0 justify-center items-center lg:mt-3 py-6">
           <div className="px-8 mt-8 lg:mt-0 w-full lg:w-[50%]">
             <h1 className="text-[40px] lg:text-[40px] leading-[45px] lg:leading-[55px] font-[500]">
-              What's{" "}
+              What is{" "}
               <span className="text-rose-500 font-semibold">
                 Medi<span className="text-primary font-semibold">Mart</span>
               </span>

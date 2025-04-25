@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+ 
 // pages/product/[id].tsx
 import { Button } from "@/components/ui/button";
 import { TMedicine } from "@/types";

@@ -2,10 +2,10 @@
 "use client";
 
 import Loading from "@/components/shared/Loading";
-import { getAllProducts } from "../../../../../services/product";
 import { TMedicine } from "@/types";
 import { useEffect, useState } from "react";
 import ProductCard from "../../products/AllProduct/productCard";
+import { getAllProducts } from "@/services/Product";
 
 const FeaturedSection = () => {
   const [products, setProducts] = useState<TMedicine[]>([]);

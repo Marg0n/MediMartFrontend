@@ -1,5 +1,5 @@
 import ProductDetails from "@/components/modules/products/AllProduct/productDetailsCard";
-import { getSingleProduct } from "@/services/product";
+import { getSingleProduct } from "@/services/Product";
 
 const MedicineDetailsPage = async ({
   params,
