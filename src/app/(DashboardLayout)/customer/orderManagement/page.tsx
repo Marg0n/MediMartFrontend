@@ -5,13 +5,13 @@ import { useEffect } from 'react';
 // eslint-disable-next-line @next/next/no-async-client-component
 const OrderPage =  () => {
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
 const item=async()=>{
   const data = await fetch('https://medi-mart-backend-eight.vercel.app/api/orders')
   const posts = await data.json()
   console.log(posts)
 }
 useEffect(() => {
-
 
 item()
   },[item])

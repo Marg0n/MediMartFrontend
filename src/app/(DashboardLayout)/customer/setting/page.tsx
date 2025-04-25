@@ -45,7 +45,7 @@ const Setting = () => {
   };
 
   const initial = user?.name?.charAt(0).toUpperCase() || '?';
-
+console.log(initial)
   return (
     <div className="h-screen bg-gradient-to-r from-teal-500 to-emerald-500 flex justify-center items-center p-6">
       <div className="max-w-lg w-full bg-white rounded-lg shadow-lg p-8 bg-gradient-to-r">
