@@ -34,40 +34,53 @@ const data = {
       icon: SquareTerminal,
       isActive: true,
     },
+
+    
+    // {
+    //   title: "Order Management",
+    //   url: "",
+    //   icon: Bot,
+    //   items: [
+    //     {
+    //       title: "Manage Products",
+    //       url: "/customer/orderManagement",
+    //     },
+    //     {
+    //       title: "Manage Categories",
+    //       url: "/customer/customer/shop/category",
+    //     },
+    //     {
+    //       title: "Manage Brands",
+    //       url: "/customer/shop/brand",
+    //     },
+    //     {
+    //       title: "Manage Coupon",
+    //       url: "/customer/shop/manage-coupon",
+    //     },
+    //   ],
+    // },
+
     {
       title: "Order Management",
       url: "/customer/orderManagement",
       icon: Bot,
-      items: [
-        {
-          title: "Manage Products",
-          url: "/customer/shop/orderManagement",
-        },
-        {
-          title: "Manage Categories",
-          url: "/customer/shop/category",
-        },
-        {
-          title: "Manage Brands",
-          url: "/customer/shop/brand",
-        },
-        {
-          title: "Manage Coupon",
-          url: "/customer/shop/manage-coupon",
-        },
-      ],
+      // items: [
+      //   {
+      //     title: "Profile",
+      //     url: "/profile",
+      //   },
+      // ],
     },
-
     {
       title: "Settings",
       url: "/customer/setting",
       icon: Settings,
-      items: [
-        {
-          title: "Profile",
-          url: "/profile",
-        },
-      ],
+      // items: [
+      //   {
+      //     title: "Profile",
+      //     url: "/profile",
+      //   },
+      // ],
     },
   ],
   navSecondary: [
