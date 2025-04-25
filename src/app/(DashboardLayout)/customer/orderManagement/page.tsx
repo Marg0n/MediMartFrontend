@@ -1,6 +1,25 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+import { useEffect } from 'react';
 
-const OrderPage = () => {
+// eslint-disable-next-line @next/next/no-async-client-component
+const OrderPage =  () => {
+
+const item=async()=>{
+  const data = await fetch('https://medi-mart-backend-eight.vercel.app/api/orders')
+  const posts = await data.json()
+  console.log(posts)
+}
+useEffect(() => {
+
+
+item()
+  },[item])
+
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+ 
   return (
     <div className="min-h-screen bg-white p-8">
       <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
