@@ -69,7 +69,7 @@ const Setting = () => {
 
         {/* Instructions */}
         <p className="text-center text-gray-600 mb-6">
-          To update your account name, please enter a new name below and click "Update Name." This will change the name associated with your profile.
+          To update your account name, please enter a new name below and click Update Name.This will change the name associated with your profile.
         </p>
 
         {/* Form */}

@@ -8,7 +8,7 @@ const AboutSection = () => {
         <header className="flex h-full lg:flex-row flex-col gap-[50px] lg:gap-0 justify-center items-center lg:mt-3 py-6">
           <div className="px-8 mt-8 lg:mt-0 w-full lg:w-[50%]">
             <h1 className="text-[40px] lg:text-[40px] leading-[45px] lg:leading-[55px] font-[500]">
-              What's <span className="text-rose-500 font-semibold">Medi<span className="text-primary font-semibold">Mart</span></span> 
+              What 's <span className="text-rose-500 font-semibold">Medi<span className="text-primary font-semibold">Mart</span></span> 
             </h1>
             <p className="text-[16px] mt-2">
             <span className="text-rose-500 font-semibold">Medi<span className="text-primary font-semibold">Mart</span></span>  is the very first premium online medicine brand manufactured in
