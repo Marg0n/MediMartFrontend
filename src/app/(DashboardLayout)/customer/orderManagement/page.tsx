@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { format, parseISO } from 'date-fns';
+
 import { FiArrowUp, FiArrowDown, FiEdit2, FiPrinter, FiMoreHorizontal } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -60,9 +60,11 @@ interface OrderTableProps {
   loading?: boolean;
 }
 
-const OrderManagement: React.FC<OrderTableProps> = ({ orders, sort, onSort, loading = false }) => {
+const OrderManagement: React.FC<OrderTableProps> = async() => {
   const [expandedOrderId, setExpandedOrderId] = React.useState<string | null>(null);
-
+  let data = await fetch('https://medi-mart-backend-eight.vercel.app/api/orders')
+  let result = await data.json()
+  console.log(result)
   const renderStatus = (status: OrderStatus) => {
     const statusConfig = {
       pending: { bg: 'bg-yellow-100', text: 'text-yellow-800' },
@@ -79,10 +81,10 @@ const OrderManagement: React.FC<OrderTableProps> = ({ orders, sort, onSort, load
       </span>
     );
   };
-
+/* loading */
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-64">
+      <div className="flex justify-center items-center h-64     ">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     );
