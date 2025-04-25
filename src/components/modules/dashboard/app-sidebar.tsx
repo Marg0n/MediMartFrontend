@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, Settings, SquareTerminal } from "lucide-react";
+import { Bot, Frame, PieChart, Send, Settings, SquareTerminal } from "lucide-react";
 import * as React from "react";
 
 import Logo from "@/assets/images/logo/Logo";
@@ -71,28 +71,21 @@ const data = {
       isActive: true,
     },
     {
-      title: "Manage",
-      url: "/customer",
+      title: "Your Order",
+      url: "/customer/orderManagement",
       icon: Bot,
-      items: [
-        {
-          title: "Manage Products",
-          url: "//medicines",
-        },
-        {
-          title: "Manage Users",
-          url: "/admin/users",
-        },
-        {
-          title: "Manage Orders",
-          url: "/admin/orders",
-        },
-      ],
+      // items: [
+      //   {
+      //     title: "Manage Products",
+      //     url: "/orderManagement",
+      //   },
+    
+      // ],
     },
     //ekhane change kora lagbe na eta common rekhechi
     {
       title: "Settings",
-      url: "/update-user",
+      url: "/customer/setting",
       icon: Settings,
       // items: [
       //   {
