@@ -52,3 +52,66 @@ export const getSingleProduct = async (productId: string) => {
     return Error(error.message);
   }
 };
+// create a new product
+export const createProduct = async (productData: Record<string, any>) => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/medicines`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+      body: JSON.stringify(productData),
+    });
+
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    return Error(error.message);
+  }
+};
+// update a product
+export const updateProduct = async (
+  productId: string,
+  updatedData: Record<string, any>,
+  token: string
+) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/medicines/${productId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(updatedData),
+      }
+    );
+
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    return Error(error.message);
+  }
+};
+// ✅ Updated deleteProduct function
+export const deleteProduct = async (productId: string, token: string) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/medicines/${productId}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const data = await res.json();
+    console.log("DELETE response:", data);
+    return data;
+  } catch (error: any) {
+    return Error(error.message);
+  }
+};

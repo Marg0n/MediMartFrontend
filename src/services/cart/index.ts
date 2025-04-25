@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
-import { IOrder } from "@/types/cart";
+import { IPartialOrder } from "@/types/cart";
 import { cookies } from "next/headers";
 
-export const createOrder = async (order: IOrder) => {
+export const createOrder = async (order: IPartialOrder) => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/order`, {
       method: "POST",

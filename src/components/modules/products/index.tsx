@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
-import FilterSearch from "../filterSearch";
-import InfiniteProductList from "../inifinityScroll";
+import FilterSearch from "./AllProduct/filterSearch";
+import InfiniteProductList from "./AllProduct/inifinityScroll";
 
 const AllProducts = () => {
   const [filters, setFilters] = useState({

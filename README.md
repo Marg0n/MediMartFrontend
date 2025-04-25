@@ -212,7 +212,7 @@ The **Medicine E-Commerce Shop** is an online platform where users can browse, s
   npm i redux-persist
   ```
 
-- Install [redux-persist.js](https://www.npmjs.com/package/redux-persist) 
+- Install [swiper](https://swiperjs.com) 
 
   ```bash
   npm i swiper

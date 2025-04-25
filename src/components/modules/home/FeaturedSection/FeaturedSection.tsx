@@ -5,7 +5,7 @@ import Loading from "@/components/shared/Loading";
 import { getAllProducts } from "@/services/Product";
 import { TMedicine } from "@/types";
 import { useEffect, useState } from "react";
-import ProductCard from "../../products/productCard";
+import ProductCard from "../../products/AllProduct/productCard";
 
 const FeaturedSection = () => {
   const [products, setProducts] = useState<TMedicine[]>([]);

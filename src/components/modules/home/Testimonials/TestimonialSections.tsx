@@ -3,16 +3,16 @@
 "use client";
 
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const testimonials = [
   {
     id: 1,
-    name: "Mr. ",
+    name: "Mr. Jobayer",
     role: "Regular Customer",
     quote:
       "MediMart has made managing my health so much easier. Their fast delivery and top-notch service always impress me!",
@@ -32,41 +32,41 @@ const testimonials = [
     role: "Caring Sister",
     quote:
       "As a mom, I love the convenience and peace of mind MediMart gives me when buying baby and health products.",
-    image: "https://img.freepik.com/foto-gratuito/silhouette-di-donne-con-bicicletta-e-bel-cielo_1150-5338.jpg",
+    image:
+      "https://img.freepik.com/foto-gratuito/silhouette-di-donne-con-bicicletta-e-bel-cielo_1150-5338.jpg",
   },
   {
-  id: 4,
-  name: "Mr Shoybal",
-  role: "Pharmacy Owner",
-  quote:
-    "MediMart helped streamline my stock purchases with reliable service and great wholesale deals. Highly recommended!",
-  image: "https://i.ibb.co.com/KNVKRLQ/model-boy.jpg",
-},
-{
-  id: 5,
-  name: "Mr. D' Costa",
-  role: "Engineer",
-  quote:
-    "Ordering from MediMart is quick and effortless. I get my kid’s essentials delivered without the stress of shopping.",
-  image: "https://avatars.githubusercontent.com/u/54356991?v=4",
-},
-{
-  id: 6,
-  name: "Tariq Hasan",
-  role: "Busy Parent",
-  quote:
-    "Ordering from MediMart is quick and effortless. I get my kid’s essentials delivered without the stress of shopping.",
-  image: "https://i.ibb.co.com/mHM9fJc/model-boy1.jpg",
-},
-{
-  id: 7,
-  name: "Maliha Ahmed",
-  role: "Diabetic Patient",
-  quote:
-    "MediMart has been a blessing! I never miss my meds thanks to their timely reminders and easy subscription service.",
-  image: "https://i.ibb.co.com/Cmxf0yL/model-girl8.jpg",
-}
-
+    id: 4,
+    name: "Mr Shoybal",
+    role: "Pharmacy Owner",
+    quote:
+      "MediMart helped streamline my stock purchases with reliable service and great wholesale deals. Highly recommended!",
+    image: "https://i.ibb.co.com/KNVKRLQ/model-boy.jpg",
+  },
+  {
+    id: 5,
+    name: "Mr. D' Costa",
+    role: "Engineer",
+    quote:
+      "Ordering from MediMart is quick and effortless. I get my kid’s essentials delivered without the stress of shopping.",
+    image: "https://avatars.githubusercontent.com/u/54356991?v=4",
+  },
+  {
+    id: 6,
+    name: "Tariq Hasan",
+    role: "Busy Parent",
+    quote:
+      "Ordering from MediMart is quick and effortless. I get my kid’s essentials delivered without the stress of shopping.",
+    image: "https://i.ibb.co.com/mHM9fJc/model-boy1.jpg",
+  },
+  {
+    id: 7,
+    name: "Maliha Ahmed",
+    role: "Diabetic Patient",
+    quote:
+      "MediMart has been a blessing! I never miss my meds thanks to their timely reminders and easy subscription service.",
+    image: "https://i.ibb.co.com/Cmxf0yL/model-girl8.jpg",
+  },
 ];
 
 const TestimonialSection = () => {

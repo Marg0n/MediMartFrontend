@@ -1,6 +1,7 @@
-import { getAllProducts } from "@/services/Product";
 import { TMedicine } from "@/types";
 import ProductCard from "./productCard";
+import { getAllProducts } from "@/services/Product";
+
 const RelatedProducts = async ({ medicine }: { medicine: TMedicine }) => {
   const data = await getAllProducts("1", "100", {}); // Fetch all products
   const allMedicines = data?.data?.result;

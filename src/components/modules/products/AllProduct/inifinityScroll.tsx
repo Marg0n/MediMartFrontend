@@ -2,11 +2,11 @@
 "use client";
 
 import Loading from "@/components/shared/Loading";
-import { getAllProducts } from "@/services/Product";
 import { TMedicine } from "@/types";
 import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ProductCard from "./productCard";
+import { getAllProducts } from "@/services/Product";
 
 const limit = 8;
 

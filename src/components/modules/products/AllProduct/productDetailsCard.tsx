@@ -10,7 +10,6 @@ import {
   Heart,
   Info,
   RefreshCcw,
-  ShoppingCart,
   Sun,
   Video,
   Warehouse,
@@ -18,6 +17,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import RelatedProducts from "./relatedProducts";
+import AddToCartButton from "@/components/shared/AddToCartButton";
+
+
 
 const ProductDetails = async ({ medicine }: { medicine: TMedicine }) => {
   const originalPrice = Number(medicine?.price) + 50;
@@ -110,10 +112,11 @@ const ProductDetails = async ({ medicine }: { medicine: TMedicine }) => {
                 Buy Now
               </Button>
             </Link>
-            <Button variant="outline" className="flex items-center gap-2">
+            {/* <Button variant="outline" className="flex items-center gap-2">
               <ShoppingCart className="w-5 h-5" />
               Add to Cart
-            </Button>
+            </Button> */}
+            <AddToCartButton medicine={medicine} />
           </div>
         </div>
       </div>

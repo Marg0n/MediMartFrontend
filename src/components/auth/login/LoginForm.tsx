@@ -11,22 +11,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { loginUser, reCaptchaTokenVerification } from "@/services/AuthService";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeClosed } from "lucide-react";
 import Link from "next/link";
-import { 
-  // useRouter, 
-  useSearchParams 
+import {
+  // useRouter,
+  useSearchParams,
 } from "next/navigation";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { loginSchema } from "./loginValidation";
-import { loginUser, reCaptchaTokenVerification } from "@/services/AuthService";
-import { EyeClosed, Eye } from "lucide-react";
 
 export default function LoginForm() {
-
   // react hook form
   const form = useForm({
     resolver: zodResolver(loginSchema),
@@ -57,7 +56,6 @@ export default function LoginForm() {
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-
     // reCaptchaStatus check
     if (!reCaptchaStatus) {
       toast.error("Please complete the reCAPTCHA first.");
@@ -66,8 +64,12 @@ export default function LoginForm() {
 
     try {
       const res = await loginUser(data);
-      if (res?.success  ) {
+      if (res?.success) {
         toast.success(res?.message);
+        if (typeof window !== "undefined") {
+          localStorage.setItem("authToken", res?.token);
+        }
+        console.log(res?.token);
         window.location.href = redirect || "/";
 
         // router.push(redirect || "/");

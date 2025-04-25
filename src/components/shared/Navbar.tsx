@@ -22,6 +22,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge"
+import { useAppDispatch } from "@/redux/hooks";
+import { resetCart } from "@/redux/features/cartSlice";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -32,16 +34,20 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  // using hooks
+  //* using hooks
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, setUser, setIsLoading } = useUser();
   const pathname = usePathname();
   // const router = useRouter();
 
+  //* redux
+  const dispatch = useAppDispatch();
+
   const handleLogOut = async () => {
     await logout();
     setUser(null);
     setIsLoading(true);
+    dispatch(resetCart()); //? clear cart
     if (protectedRoutes.some((route) => pathname.match(route))) {
       window.location.href = "/"; 
     }

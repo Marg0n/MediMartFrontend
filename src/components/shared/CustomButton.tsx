@@ -24,8 +24,12 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 }) => {
   return (
     <button
-      onClick={handleAnything}
+      onClick={(e) => {
+        if (disabled) return; // 🔒 Ignore click if disabled, so prevents any click handler if disabled
+        handleAnything?.(e);
+      }}
       type={type} // the `type` prop here
+      disabled={disabled}
       className={clsx(
         "relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-mono dark:bg-slate-800 tracking-tighter text-white bg-blue-600 rounded-lg group hover:cursor-pointer  active:scale-95 active:shadow-inner",
         disabled && "opacity-50 cursor-not-allowed",

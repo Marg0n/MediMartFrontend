@@ -12,18 +12,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { registerUser } from "@/services/AuthService";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeClosed } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { registrationSchema } from "./registerValidation";
-import { registerUser } from "@/services/AuthService";
-import { useState } from "react";
-import { EyeClosed, Eye } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
-
   // react hook form
   const form = useForm({
     resolver: zodResolver(registrationSchema),
@@ -33,7 +32,7 @@ export default function RegisterForm() {
     formState: { isSubmitting },
   } = form;
 
-  // router  
+  // router
   const router = useRouter();
 
   // toggle password
@@ -45,7 +44,7 @@ export default function RegisterForm() {
   //   console.log(password, passwordConfirm);
 
   // handle submit
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {    
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       const res = await registerUser(data);
       if (res?.success) {

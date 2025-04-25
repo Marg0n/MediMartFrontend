@@ -1,17 +1,9 @@
 "use client";
 
+import { Bot, Settings, SquareTerminal } from "lucide-react";
 import * as React from "react";
-import {
-  Bot,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings,
-  SquareTerminal,
-} from "lucide-react";
 
+import Logo from "@/assets/images/logo/Logo";
 import {
   Sidebar,
   SidebarContent,
@@ -21,49 +13,46 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useUser } from "@/contexts/UserContext";
 import Link from "next/link";
-import Logo from "@/assets/images/logo/Logo";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 
 const data = {
-  navMain: [
+  adminNavItem: [
     {
       title: "Dashboard",
-      url: "/customer",
+      url: "/customer/dashboard",
       icon: SquareTerminal,
       isActive: true,
     },
-
-    
-    // {
-    //   title: "Order Management",
-    //   url: "",
-    //   icon: Bot,
-    //   items: [
-    //     {
-    //       title: "Manage Products",
-    //       url: "/customer/orderManagement",
-    //     },
-    //     {
-    //       title: "Manage Categories",
-    //       url: "/customer/customer/shop/category",
-    //     },
-    //     {
-    //       title: "Manage Brands",
-    //       url: "/customer/shop/brand",
-    //     },
-    //     {
-    //       title: "Manage Coupon",
-    //       url: "/customer/shop/manage-coupon",
-    //     },
-    //   ],
-    // },
-
     {
-      title: "Order Management",
-      url: "/customer/orderManagement",
+      title: "Shop",
+      url: "/customer/shop/products",
       icon: Bot,
+      items: [
+        {
+          title: "Manage Products",
+          url: "/customer/shop/products",
+        },
+        {
+          title: "Manage Categories",
+          url: "/customer/shop/category",
+        },
+        {
+          title: "Manage Brands",
+          url: "/customer/shop/brand",
+        },
+        {
+          title: "Manage Coupon",
+          url: "/customer/shop/manage-coupon",
+        },
+      ],
+    },
+    {
+      title: "Settings",
+      url: "#",
+      icon: Settings,
       // items: [
       //   {
       //     title: "Profile",
@@ -71,9 +60,39 @@ const data = {
       //   },
       // ],
     },
+  ],
+  // customer nav items
+  //Akbar Shanto vai ekhane customer er jonne nav items add korben
+  customerNavItem: [
+    {
+      title: "Dashboard",
+      url: "/customer",
+      icon: SquareTerminal,
+      isActive: true,
+    },
+    {
+      title: "Manage",
+      url: "/customer",
+      icon: Bot,
+      items: [
+        {
+          title: "Manage Products",
+          url: "//medicines",
+        },
+        {
+          title: "Manage Users",
+          url: "/admin/users",
+        },
+        {
+          title: "Manage Orders",
+          url: "/admin/orders",
+        },
+      ],
+    },
+    //ekhane change kora lagbe na eta common rekhechi
     {
       title: "Settings",
-      url: "/customer/setting",
+      url: "/update-user",
       icon: Settings,
       // items: [
       //   {
@@ -85,9 +104,10 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
+      title: "Dashboard",
+      url: "/customer",
+      icon: SquareTerminal,
+      isActive: true,
     },
     {
       title: "Feedback",
@@ -115,26 +135,48 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { user, isLoading } = useUser();
+  console.log("user", user);
+  if (isLoading) {
+    return <div className="">Loading...</div>;
+  }
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <Link href="/">
-                <div className="flex items-center justify-center">
-                  <Logo />
-                </div>
-                {/* <div className="grid flex-1 text-left text-sm leading-tight">
-                  <h2 className="font-bold text-xl">MediMart</h2>
-                </div> */}
-              </Link>
+              {user?.role === "admin" ? (
+                <Link href="/admin">
+                  <div className="flex items-center justify-center">
+                    <Logo />
+                  </div>
+                  {/* <div className="grid flex-1 text-left text-sm leading-tight">
+   <h2 className="font-bold text-xl">MediMart</h2>
+ </div> */}
+                </Link>
+              ) : (
+                <Link href="/customer">
+                  <div className="flex items-center justify-center">
+                    <Logo />
+                  </div>
+                  {/* <div className="grid flex-1 text-left text-sm leading-tight">
+   <h2 className="font-bold text-xl">MediMart</h2>
+ </div> */}
+                </Link>
+              )}
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        {
+          <NavMain
+            items={
+              user?.role === "admin" ? data.adminNavItem : data.customerNavItem
+            }
+          />
+        }
       </SidebarContent>
       <SidebarFooter>
         <NavUser />

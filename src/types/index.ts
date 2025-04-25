@@ -1,4 +1,4 @@
-export type TMedicine = {
+export interface TMedicine  {
   _id?: string; // optional because when creating, you might not have it yet
   name: string;
   brand: string;
